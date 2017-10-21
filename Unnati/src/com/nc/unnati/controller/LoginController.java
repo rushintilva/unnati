@@ -50,8 +50,9 @@ public class LoginController extends HttpServlet {
 			if(loginStatus == true) {
 			//	HttpSession session = request.getSession();
 			//	session.setAttribute("sessionID", login.getEmailID());
-				RequestDispatcher rd = request.getRequestDispatcher("institutedashboard.html");
-				rd.forward(request, response);
+				response.sendRedirect("institutedashboard.html");
+			//	RequestDispatcher rd = request.getRequestDispatcher("institutedashboard.html");
+			//	rd.forward(request, response);
 			//	request.getRequestDispatcher("institutedashboard.html").forward(request, response);
 			} else
 				request.getRequestDispatcher("error.html").forward(request, response);
