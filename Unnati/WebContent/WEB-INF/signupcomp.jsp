@@ -42,7 +42,7 @@
 				</div>
 				<div class="col-md-6">
 					<label for="password">Password :</label> <input type="password"
-						name="passwd" placeholder="Enter Password" required="required">
+						name="password" placeholder="Enter Password" required="required">
 				</div>
 				<div class="col-md-4">
 					<label for="lname">Contact Number :</label> <input type="text"

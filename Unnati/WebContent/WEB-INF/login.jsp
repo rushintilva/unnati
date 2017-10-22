@@ -25,6 +25,7 @@
 				<h2>Login And Get To Work</h2>
 				<table>
 					<tr>
+						${message}
 						<th>
 							<h4>Login As : </h4>
 						</th>
@@ -37,7 +38,7 @@
 					</tr>
 				</table>
 				
-  				<input type="text" name="username" placeholder="Enter Username" required="required"><br>
+  				<input type="text" name="username" placeholder="Enter Username" required="required" minlength="6" maxlength="6"><br>
 				<input type="password" name="password" placeholder="Enter Password" required="required"><br>
 				
 				<button class="loginbutton" type="submit" >Log In</button><br>

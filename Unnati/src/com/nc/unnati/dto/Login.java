@@ -1,14 +1,16 @@
 package com.nc.unnati.dto;
 
 public class Login {
-	private String emailID,password;
+	private int iti_key;
+	private String password;
 
-	public String getEmailID() {
-		return emailID;
+	
+	public int getIti_key() {
+		return iti_key;
 	}
 
-	public void setEmailID(String emailID) {
-		this.emailID = emailID;
+	public void setIti_key(int iti_key) {
+		this.iti_key = iti_key;
 	}
 
 	public String getPassword() {

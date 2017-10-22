@@ -43,19 +43,20 @@ public class LoginController extends HttpServlet {
 	
 		if("institute".equals(request.getParameter("login-as"))) {
 			Login login = new Login();
-			login.setEmailID(request.getParameter("username"));
+			login.setIti_key(Integer.parseInt(request.getParameter("username")));
 			login.setPassword(request.getParameter("password"));
 			LoginDAO logindao = new LoginDAO();
 			boolean loginStatus = logindao.authenticateInstitue(login);
 			if(loginStatus == true) {
 			//	HttpSession session = request.getSession();
-			//	session.setAttribute("sessionID", login.getEmailID());
+			//	session.setAttribute("sessionID", login.setIti_key());
 				response.sendRedirect("institutedashboard.html");
 			//	RequestDispatcher rd = request.getRequestDispatcher("institutedashboard.html");
 			//	rd.forward(request, response);
 			//	request.getRequestDispatcher("institutedashboard.html").forward(request, response);
 			} else
-				request.getRequestDispatcher("error.html").forward(request, response);
+			//	request.setAttribute("message", "Incorrect Username or Password !");
+				request.getRequestDispatcher("login.html").forward(request, response);
 		} else if("company".equals(request.getParameter("login-as"))) {
 			
 		}

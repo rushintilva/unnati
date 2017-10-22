@@ -27,8 +27,6 @@
 			<a href="index.jsp"><img src="img/logo.png" style="float: left;"></a>
 					
 			<div class="nav-medium" id="myNavmedium">
- 					<a href="howitworks.html">HOW IT WORKS</a>
-				<a href="about.html">ABOUT US</a>
 				<a href="signup.html"><span class="glyphicon glyphicon-user">&nbsp;</span>SIGN UP</a>
 				<a href="login.html"><span class="glyphicon glyphicon-log-in">&nbsp;</span>LOGIN</a>
 				<a href="javascript:void(0);" class="icon" onclick="myNavigation()">&#9776;</a>
@@ -38,7 +36,7 @@
 
 
 	<div class="slider">
-			<img src="img/banner4.png">
+		<img src="img/banner4.png">
 	</div>
 	
 	<div class="section">
