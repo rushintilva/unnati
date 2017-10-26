@@ -1,25 +1,21 @@
 package com.nc.unnati.dto;
 
 public class Login {
-	private int iti_key;
+	private String username;
 	private String password;
-
-	
-	public int getIti_key() {
-		return iti_key;
+	public String getUsername() {
+		return username;
 	}
-
-	public void setIti_key(int iti_key) {
-		this.iti_key = iti_key;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-
 	public String getPassword() {
 		return password;
 	}
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 	
 	
 }

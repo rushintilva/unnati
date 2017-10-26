@@ -43,7 +43,7 @@ public class LoginController extends HttpServlet {
 	
 		if("institute".equals(request.getParameter("login-as"))) {
 			Login login = new Login();
-			login.setIti_key(Integer.parseInt(request.getParameter("username")));
+			login.setUsername(request.getParameter("username"));
 			login.setPassword(request.getParameter("password"));
 			LoginDAO logindao = new LoginDAO();
 			boolean loginStatus = logindao.authenticateInstitue(login);
@@ -56,7 +56,8 @@ public class LoginController extends HttpServlet {
 			//	request.getRequestDispatcher("institutedashboard.html").forward(request, response);
 			} else
 			//	request.setAttribute("message", "Incorrect Username or Password !");
-				request.getRequestDispatcher("login.html").forward(request, response);
+				System.out.println("Wrong data entered");
+			//	request.getRequestDispatcher("login.html").forward(request, response);
 		} else if("company".equals(request.getParameter("login-as"))) {
 			
 		}

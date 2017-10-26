@@ -172,9 +172,9 @@
 									id="search" style="width: 160px"
 									onchange="GetSelectedTextValue()">
 									<option value="">-- Filter by --</option>
-									<option value="username">USERNAME</option>
-									<option value="skill">SKILL</option>
-									<option value="state">STATE</option>
+									<option value="addharno">Addhar Number</option>
+									<option value="skill">Skill</option>
+									<option value="state">State</option>
 								</select>
 							</div>
 	
@@ -248,47 +248,6 @@
 			<div id="profile" class="tabcontent" style="height: 468px;">
 
 		
-				<%
-					try {
-						Class.forName("com.mysql.jdbc.Driver");
-						Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");
-						PreparedStatement stmt = conn.prepareStatement("SELECT * FROM institute WHERE instiname=?");
-						ResultSet rs = stmt.executeQuery();
-
-						while (rs.next()) {
-				%>
-				<h4
-					style="padding-left: 80px; padding-top: 16px; text-align: left; color: forestgreen;">
-					Organisation :
-					<%=rs.getString("instiname")%></h4>
-				<h4
-					style="padding-left: 80px; padding-top: 16px; text-align: left; color: forestgreen;">
-					Contact Number :
-					<%=rs.getString("contact")%></h4>
-				<h4
-					style="padding-left: 80px; padding-top: 16px; text-align: left; color: forestgreen;">
-					State :
-					<%=rs.getString("state")%></h4>
-				<h4
-					style="padding-left: 80px; padding-top: 16px; text-align: left; color: forestgreen;">
-					Country :
-					<%=rs.getString("country")%></h4>
-				<h4
-					style="padding-left: 80px; padding-top: 16px; text-align: left; color: forestgreen;">
-					Zip Code :
-					<%=rs.getString("zip")%></h4>
-				<h4
-					style="padding-left: 80px; padding-top: 16px; text-align: left; color: forestgreen;">
-					Address :
-					<%=rs.getString("city")%></h4>
-				<%
-					}
-						conn.close();
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-				%>
-
 			</div>
 
 		</div>

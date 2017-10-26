@@ -11,18 +11,20 @@ import com.nc.unnati.util.DBUtil;
 public class LoginDAO {
 	
 	public boolean authenticateInstitue(Login login) {
-		String query = "SELECT iti_key,password FROM institute WHERE visibility=true";
-		int userName = 0;
+		String query = "SELECT username,password FROM institute WHERE visibility=true";
+		String userName = null;
 		String password = null;
 		try(Connection connection = DBUtil.getConnection()) {
 			Statement stmt = connection.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
 			while(rs.next()) {
-				System.out.println(login.getIti_key());
-				System.out.println(rs.getString("iti_key"));
-				userName = Integer.parseInt(rs.getString("iti_key"));
+				System.out.println(login.getUsername());
+				System.out.println(login.getPassword());
+				userName = rs.getString("username");
 				password = rs.getString("password");
-				if(userName == login.getIti_key() && password.equals(login.getPassword()))
+				System.out.println("db username :"+userName);
+				System.out.println("DB password :"+password);
+				if(userName.equals(login.getUsername()) && password.equals(login.getPassword()))
 				return true;
 			}
 			
