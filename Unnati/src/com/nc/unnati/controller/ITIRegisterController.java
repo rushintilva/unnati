@@ -53,7 +53,8 @@ public class ITIRegisterController extends HttpServlet {
 		
 		if(registered == true) {
 			System.out.println("true");
-			request.getRequestDispatcher("login.html").forward(request, response);
+			response.sendRedirect("login.html");
+			//request.getRequestDispatcher("login.html").forward(request, response);
 		} else {
 			System.out.println("error");
 			request.getRequestDispatcher("error.html").forward(request, response);;

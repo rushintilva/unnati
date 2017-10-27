@@ -48,12 +48,12 @@ public class LoginController extends HttpServlet {
 			LoginDAO logindao = new LoginDAO();
 			boolean loginStatus = logindao.authenticateInstitue(login);
 			if(loginStatus == true) {
-			//	HttpSession session = request.getSession();
-			//	session.setAttribute("sessionID", login.setIti_key());
+				HttpSession session = request.getSession();
+				session.setAttribute("sessionID", login.getUsername());
+			//	RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/institutedashboard.html");
 				response.sendRedirect("institutedashboard.html");
-			//	RequestDispatcher rd = request.getRequestDispatcher("institutedashboard.html");
 			//	rd.forward(request, response);
-			//	request.getRequestDispatcher("institutedashboard.html").forward(request, response);
+				System.out.println(request.getRequestURL().toString());
 			} else
 			//	request.setAttribute("message", "Incorrect Username or Password !");
 				System.out.println("Wrong data entered");
